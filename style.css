@@ -3,6 +3,10 @@ Theme Name: mysa
 Author: Giedre and Sara
 */
 
+body {
+    background-color: pink;
+}
+
 .language-switcher {
     display: flex;
     align-items: center;
