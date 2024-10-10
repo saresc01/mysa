@@ -4,7 +4,7 @@
 ?>
 
 <?php get_header(); ?>
-<?php echo 'This is the Blog page template.'; ?>
+
 <body>
     <?php if (have_posts()): ?>
         <?php while (have_posts()): the_post(); ?>
