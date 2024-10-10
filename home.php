@@ -1,170 +1,123 @@
 <?php get_header(); ?>
+<body>
+    <?php if (have_posts()): ?>
+        <?php while (have_posts()): the_post(); ?>
+        
+            <!-- Fetch all fields -->
+            <?php
+                $headline = get_field("headline");
+                $subheadline = get_field("subheadline");
+                $featured_post_date = get_field("featured_post_date");
+                $featured_blog_img = get_field("featured_blog_img");
+                $featured_blog_heading = get_field("featured_blog_heading");
+                $featured_blog_text = get_field("featured_blog_text");
+            ?>
 
-<style>
-    body {
-        font-family: 'Helvetica Neue', Arial, sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
+            <!-- Blog Header -->
+            <header class="py-5 bg-light border-bottom mb-4">
+                <div class="container">
+                    <div class="text-center my-5">
+                        <h1 class="fw-bolder"><?php echo $headline; ?></h1>
+                        <p class="lead mb-0"><?php echo $subheadline; ?></p>
+                    </div>
+                </div>
+            </header>
 
-    .container {
-        width: 85%;
-        margin: 0 auto;
-        max-width: 1100px;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .site-main {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .blog-posts {
-        width: 70%;
-    }
-
-    .blog-posts article {
-        margin-bottom: 30px;
-        padding: 20px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .entry-title {
-        font-size: 28px;
-        margin-bottom: 10px;
-        font-weight: bold;
-    }
-
-    .entry-title a {
-        text-decoration: none;
-        color: #0073aa;
-    }
-
-    .entry-title a:hover {
-        text-decoration: underline;
-    }
-
-    .entry-meta {
-        font-size: 14px;
-        color: #777;
-        margin-bottom: 15px;
-    }
-
-    .entry-content {
-        font-size: 16px;
-        line-height: 1.7;
-    }
-
-    .pagination {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    .pagination a {
-        text-decoration: none;
-        color: #0073aa;
-        padding: 8px 12px;
-        border: 1px solid #ddd;
-        margin: 0 2px;
-        border-radius: 3px;
-    }
-
-    .pagination a:hover {
-        background-color: #0073aa;
-        color: #fff;
-    }
-
-    aside.sidebar {
-        width: 25%;
-    }
-
-    aside.sidebar h2 {
-        font-size: 20px;
-        margin-bottom: 15px;
-        border-bottom: 2px solid #0073aa;
-        padding-bottom: 5px;
-    }
-
-    aside.sidebar ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-
-    aside.sidebar ul li {
-        margin-bottom: 10px;
-    }
-
-    aside.sidebar ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-    }
-
-    aside.sidebar ul li a:hover {
-        color: #0073aa;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px 0;
-        margin-top: 40px;
-        border-top: 1px solid #ddd;
-        background-color: #0073aa;
-        color: #fff;
-    }
-</style>
-
-<div class="container">
-    <main class="site-main">
-        <section class="blog-posts">
-            <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <header class="entry-header">
-                            <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                        </header>
-                        <div class="entry-meta">
-                            <span class="posted-on">Posted on <?php echo get_the_date(); ?></span>
-                            <span class="byline"> by <?php the_author_posts_link(); ?></span>
+            <!-- Page content -->
+            <div class="container">
+                <div class="row">
+                    <!-- Blog entries -->
+                    <div class="col-lg-8">
+                        <!-- Featured blog post -->
+                        <div class="card mb-4">
+                            <a href="#!">
+                                <img class="card-img-top" src="<?php echo $featured_blog_img['url']; ?>" alt="Featured Blog Image" />
+                            </a>
+                            <div class="card-body">
+                                <div class="small text-muted"><?php echo $featured_post_date; ?></div>
+                                <h2 class="card-title"><?php echo $featured_blog_heading; ?></h2>
+                                <p class="card-text"><?php echo $featured_blog_text; ?></p>
+                                <a class="btn btn-primary" href="blog_single.html">Read more →</a>
+                            </div>
                         </div>
-                        <div class="entry-content">
-                            <?php the_excerpt(); ?>
+
+                        <!-- Nested row for non-featured blog posts -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!-- Blog post medium first row -->
+                                <?php
+                                // Custom loop for non-feature blog posts row 1
+                                $non_featured_blogs = new WP_Query(array(
+                                    'post_type' => 'non_featured_blog',
+                                    'posts_per_page' => 2,
+                                ));
+                                ?>
+
+                                <?php if ($non_featured_blogs->have_posts()): ?>
+                                    <?php while ($non_featured_blogs->have_posts()): $non_featured_blogs->the_post(); ?>
+                                        <?php
+                                        $post_img = get_field("post_img"); 
+                                        $post_heading = get_field("post_heading");
+                                        $post_text = get_field("post_text");
+                                        $date_posted = get_field("date_posted");
+                                        ?>
+                                        <div class="card mb-4">
+                                            <a href="#!">
+                                                <img class="card-img-top" src="<?php echo $post_img['url']; ?>" alt="Non-Featured Blog Image" />
+                                            </a>
+                                            <div class="card-body">
+                                                <div class="small text-muted"><?php echo $date_posted; ?></div>
+                                                <h2 class="card-title h4"><?php echo $post_heading; ?></h2>
+                                                <p class="card-text"><?php echo $post_text; ?></p>
+                                                <a class="btn btn-primary" href="#!">Read more →</a>
+                                            </div>
+                                        </div>
+                                    <?php endwhile; ?>
+                                    <?php wp_reset_postdata(); ?>
+                                <?php endif; ?>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <!-- Blog post second row -->
+                                <?php
+                                // Custom loop for non-feature blog posts row 2
+                                $non_featured_blogs = new WP_Query(array(
+                                    'post_type' => 'non-featured-blog',
+                                    'posts_per_page' => 2,
+                                    'offset' => 2,
+                                ));
+                                ?>
+
+                                <?php if ($non_featured_blogs->have_posts()): ?>
+                                    <?php while ($non_featured_blogs->have_posts()): $non_featured_blogs->the_post(); ?>
+                                        <div class="card mb-4">
+                                            <a href="#!">
+                                                <img class="card-img-top" src="<?php echo $post_img['url']; ?>" alt="Non-Featured Blog Image" />
+                                            </a>
+                                            <div class="card-body">
+                                                <div class="small text-muted"><?php echo $date_posted; ?></div>
+                                                <h2 class="card-title h4"><?php echo $post_heading; ?></h2>
+                                                <p class="card-text"><?php echo $post_text; ?></p>
+                                                <a class="btn btn-primary" href="#!">Read more →</a>
+                                            </div>
+                                        </div>
+                                    <?php endwhile; ?>
+                                    <?php wp_reset_postdata(); ?>
+                                <?php endif; ?>
+                            </div>
                         </div>
-                    </article>
-                <?php endwhile; ?>
-            <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-            <?php endif; ?>
+                    </div>
 
-            <div class="pagination">
-                <?php 
-                $pagination_args = array(
-                    'total'        => $wp_query->max_num_pages,
-                    'current'      => max( 1, get_query_var('paged') ),
-                    'format'       => '?paged=%#%',
-                    'show_all'     => false,
-                    'end_size'     => 2,
-                    'mid_size'     => 1,
-                    'prev_next'    => true,
-                    'prev_text'    => __('« Previous'),
-                    'next_text'    => __('Next »'),
-                    'type'         => 'plain',
-                );
-
-                echo paginate_links( $pagination_args ); 
-                ?>
+                    <!-- Sidebar / Banner -->
+                    <div class="col-lg-4 col-12">
+                        <div class="banner mb-4 d-flex flex-column bd-highlight">
+                            <img class="card-img-top img-fluid" src="https://placehold.co/200x600" alt="Banner Image" />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        <?php endwhile; ?>
+    <?php endif; ?>
 
-        <aside class="sidebar">
-            <?php get_sidebar(); ?>
-        </aside>
-    </main>
-</div>
+    <?php get_footer(); ?>
 
-<?php get_footer(); ?>
