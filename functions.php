@@ -11,6 +11,22 @@ function mysa_disable_gutenberg() {
 }
 add_action("init", "mysa_disable_gutenberg");
 
+// custom blos post types
+function create_blog_post_types() {
+    register_post_type('non_featured_blog',
+        array(
+            'labels'      => array(
+                'name'          => __('Non-Featured Blogs'),
+                'singular_name' => __('Non-Featured Blog'),
+            ),
+            'public'      => true,
+            'has_archive' => true,
+            'supports'    => array('title', 'editor', 'thumbnail'),
+        )
+    );
+}
+add_action('init', 'create_blog_post_types');
+
 // Load resources (styles and scripts)
 function mysa_load_resources() {
     // Google Fonts loaded separately
@@ -32,3 +48,4 @@ function mysa_load_resources() {
     wp_enqueue_script("bootstrap", "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js", array(), false, true);
 }
 add_action("wp_enqueue_scripts", "mysa_load_resources");
+

@@ -1,8 +1,10 @@
-<?php get_header(); ?>
+<?php
+/* Template Name: Blog Page */
+get_header(); 
+?>
 <body>
     <?php if (have_posts()): ?>
         <?php while (have_posts()): the_post(); ?>
-        
             <!-- Fetch all fields -->
             <?php
                 $headline = get_field("headline");

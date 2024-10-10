@@ -67,6 +67,9 @@
                   </section>
             </article>
             <!-- Comments section-->
+            <?php if(comments_open() || get_comments_number ()): ?>
+            <?php comments_template(); ?>
+            <?php endif; ?>
             <section class="mb-5">
                 <div class="card bg-light">
                     <div class="card-body">
