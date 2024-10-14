@@ -310,14 +310,14 @@ button .button {
 }
 
 /* carousel not working */
-.text-carousel {
+.eco-carousel-item {
     display: flex;
     justify-content: flex-start;
     background-color: #fff;
     overflow: hidden;
 }
 
-.h7 {
+.eco-carousel{
     color: #444;
     font-size: 70px;
     text-transform: uppercase;
