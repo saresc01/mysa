@@ -383,9 +383,7 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
                                         ));
                                     ?>
 					<div class="swiper-slide lc-block">
-                  
-						<div class="card p-3">
-                        <?php if($testimonials->have_posts()): ?>
+                    <?php if($testimonials->have_posts()): ?>
                                                 <?php while($testimonials->have_posts()): $testimonials->the_post(); ?>
                                                     <?php
                                                         $statement = get_field("statement");
@@ -393,6 +391,8 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
                                                         $customer_name = get_field("customer_name");
                                                         $customer_job = get_field("customer_job");
                                                     ?>
+						<div class="card p-3">
+                       
 							<div class="card-body">
 								<div class="lc-block mb-4">
 									<div editable="rich">
