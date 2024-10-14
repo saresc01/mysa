@@ -10,7 +10,23 @@
 
         <?php
             $index_image = get_field("index_image");
-            
+            $hero_h1 = get_field("hero_h1");
+            $p1_hero = get_field("p1_hero");
+            $p2_hero = get_field("p2_hero");
+            $trends_headline = get_field("trends_headline");
+            $trends_subheadline = get_field("trends_subheadline");
+            $mystery_box_image = get_field("mystery_box_image");
+            $mystery_box_headline = get_field("mystery_box_headline");
+            $mystery_box_description = get_field("mystery_box_description");  
+            $blog_post_headline = get_field("blog_post_headline");
+            $blog_post_image = get_field("blog_post_image");
+            $blog_post_excerpt  = get_field("blog_post_excerpt");
+            $block_post_section = get_field("block_post_section");
+            $carousel_tag_line = get_field("carousel_tag_line");
+            $testimonials_heading = get_field("testimonials_heading");
+            $testimonials_subheading = get_field("testimonials_subheading");
+            $instagram_cta = get_field("instagram_cta");
+
             ?>
         
 <!-- hero --> 
@@ -18,19 +34,19 @@
     
 <!-- Hero section -->
 <section class="d-flex min-vh-100" lc-helper="background" >
-    <img src="<?php echo $index_image["url"]; ?>" alt="" class="img-fluid w-100"> 
+    <img src="<?php echo $index_image["url"]; ?>" alt="" class="img-fluid"> 
 
   <div class="align-self-center text-center text-light col-md-8 offset-md-2">
       <div class="lc-block mb-4">
           <div editable="rich">
-              <h1 class="display-1 fw-bolder">Pure Natural Wax Candles for a Greener Tomorrow</h1>
+              <h1 class="display-1 fw-bolder"><?php echo $hero_h1; ?></h1>
           </div>
       </div>
 
       <div class="lc-block">
           <div editable="rich">
-              <p class="lead">Hand-poured candles made from sustainable beeswax, soy wax, and coconut wax. Clean burning, eco-friendly, and infused with love.</p>
-              <p class="lead">Our eco-conscious candles help you light up your home while caring for the planet. Made with natural, renewable materials for a healthier living environment.</p>
+              <p class="lead"><?php echo $p1_hero; ?></p>
+              <p class="lead"><?php echo $p2_hero; ?></p>
           </div>
           <br>
           <button data-mdb-ripple-init type="button" class="btn btn-primary me-3">Shop Now</button>
@@ -55,10 +71,10 @@
   <div class="container py-5">
     <div class="row mb-4">
       <div class="lc-block text-center">
-        <h2 class="fw-bold display-2">Trending this Season: Natural Candles You’ll Love</h2>
+        <h2 class="fw-bold display-2"><?php echo $trends_headline; ?></h2>
       </div>
       <div class="lc-block text-center">
-        <p class="lead">Discover our most popular eco-friendly candles of the season. Each is crafted with sustainable wax blends and infused with natural fragrances to create a calming atmosphere.</p>
+        <p class="lead"><?php echo $trends_subheadline; ?></p>
       </div>
     </div>
 
@@ -227,14 +243,12 @@ border-radius: 12px;
 border: 1px solid rgba(209, 213, 219, 0.3);">
 <div class="lc-block">
   <div editable="rich">
-    <h2 class="fw-bolder display-3">Looking for a great surprise each month?</h2>
+    <h2 class="fw-bolder display-3"><?php echo $mystery_box_headline; ?></h2>
   </div>
 </div>
 <div class="lc-block col-md-8">
   <div editable="rich">
-    <p class="lead">Looking for a great surprise each month?
-      In our monthly candle box, you’ll get two natural candles: one with a special scent for the month, and the other a surprise fragrance to brighten your space!
-    </p>
+    <p class="lead"><?php echo $mystery_box_description; ?></p>
   </div>
 </div>
 <div class="lc-block">
@@ -263,16 +277,16 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 		<div class="col-md-6 order-md-2 py-5" style="padding:5vh 5vw">
 			<div class="lc-block mb-5">
 				<div editable="rich">
-          <h4>BLOG POST</h4>
+          <h4><?php echo $bblock_post_section; ?></h4>
 
-					<h2>Why Natural Wax Candles are the Future of Sustainable Living.</h2>
+					<h2><?php echo $block_post_headline; ?></h2>
 
 
 				</div>
 			</div><!-- /lc-block -->
 			<div class="lc-block text-secondary pb-4">
 				<div editable="rich">
-					<p><em>In a world where sustainability is more than just a trend, it's a lifestyle choice, the products we choose to bring into our homes matter more than ever. Candles, often seen as a simple indulgence, can have a significant impact on both our health and the environment. That's why at Mysa, we've made it our mission to offer a better alternative. Discover why natural wax candles are not just a luxury but a necessity for anyone committed to living sustainably.&nbsp;</em></p>
+					<p><em><?php echo $blog_post_excerpt; ?>&nbsp;</em></p>
 				</div>
 			</div>
       <div class="lc-block">
@@ -291,10 +305,10 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 
   <!--carousel-->
 <div class="eco-carousel  ">
-  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
-  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
-  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
-  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
+  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line; ?></h7>
+  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line; ?></h7>
+  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line; ?></h7>
+  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line; ?></h7>
 </div>
 
 
@@ -508,7 +522,7 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 
 <!--instagram-->
 <section>
-  <h2 class="instagram-heading">Check Us on Instagram!</h2> <!-- Centered Heading -->
+  <h2 class="instagram-heading"><?php echo $instagram_cta; ?></h2> <!-- Centered Heading -->
 
   <div class="container-fluid px-0">
     <div class="row g-0">
