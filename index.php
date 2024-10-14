@@ -33,7 +33,7 @@
   
     
 <!-- Hero section -->
-<section class="d-flex min-vh-150" lc-helper="background" >
+<section class="d-flex min-vh-100" lc-helper="background" >
     <img src="<?php echo $index_image["url"]; ?>" alt="" class="img-fluid"> 
 
   <div class="align-self-center text-center text-light col-md-8 offset-md-2">
@@ -88,36 +88,36 @@
         <!-- Slide 1 -->
         <div class="carousel-slide">
           <div class="row">
+            <!-- custom loop for products -->
+            <?php
+                                
+                                        $trending_products = new WP_Query(array(
+                                            'post_type' => 'trending_product',
+                                            'posts_per_page' => -1,
+                                        ));
+                                    ?>
+                                    <?php if($trending_products->have_posts()): ?>
+                                                <?php while($trending_products->have_posts()): $trending_products->the_post(); ?>
+                                                    <?php
+                                                        $product_title = get_field("product_title");
+                                                        $product_image = get_field("product_image");
+                                                        $product_excerpt = get_field("product_excerpt");
+                                                    ?>
             <div class="col-md-4">
               <a href="shop.html" class="card"> <!-- Wrap the card with anchor tag -->
                 <div class="card-body">
-                  <img src="assests/mysa_candle.jpg" class="card-img-top" alt="Card 1">
-                  <h5 class="card-title m-2">Red Apple and Cinnamon (Beeswax)</h5>
-                  <p class="card-text m-2">Embrace the warmth of the season with this soothing blend of red apple and cinnamon. Hand-poured from pure beeswax, this candle offers a clean burn and a cozy aroma, perfect for autumn nights.</p>
+                  <img src="<?php echo $product_image["url"]; ?>" class="card-img-top" alt="Card 1">
+                  <h5 class="card-title m-2"><?php echo $product_title; ?></h5>
+                  <p class="card-text m-2"><?php echo $product_excerpt; ?></p>
                   <a href="shop.html" class="btn btn-primary btn-block">Buy Now</a> <!-- Full-width button -->
                 </div>
               </a>
             </div>
-            <div class="col-md-4">
-              <a href="shop.html" class="card"> <!-- Wrap the card with anchor tag -->
-                <div class="card-body">
-                  <img src="assests/mysa_candle.jpg" class="card-img-top" alt="Card 2">
-                  <h5 class="card-title m-2">Fresh Lemon (Soy Wax)</h5>
-                  <p class="card-text m-2">Bright and invigorating, the Fresh Lemon soy wax candle is ideal for bringing a burst of freshness to your home. Made with natural soy wax for a long-lasting and clean burn.</p>
-                  <a href="shop.html" class="btn btn-primary btn-block">Buy Now</a> <!-- Full-width button -->
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="shop.html" class="card"> <!-- Wrap the card with anchor tag -->
-                <div class="card-body">
-                  <img src="assests/mysa_candle.jpg" class="card-img-top" alt="Card 3">
-                  <h5 class="card-title m-2">Ginger Lily (Soy Wax)</h5>
-                  <p class="card-text m-2">Add a touch of elegance to your space with the Ginger Lily candle, crafted from eco-friendly soy wax. This floral blend creates a calming atmosphere, ideal for moments of relaxation.</p>
-                  <a href="shop.html" class="btn btn-primary btn-block">Buy Now</a> <!-- Full-width button -->
-                </div>
-              </a>
-            </div>
+        
+            <?php endwhile; ?>
+                                                <?php wp_reset_postdata(); ?>
+                                            <?php endif; ?>
+
           </div>
         </div>
 
