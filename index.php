@@ -357,153 +357,54 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 <div class="container py-4">
 	<div class="lc-block text-center">
 		<div editable="rich">
-			<h2 class="mb-3 display-6 fw-bold">Lovely Customers</h2>
+			<h2 class="mb-3 display-6 fw-bold"><?php echo $testimonials_heading; ?></h2>
 		</div>
 	</div>
 	<div class="lc-block text-center mb-5">
 		<div editable="rich">
-			<p class="mb-3 lead">Customers are Awesome. Check what our clients are saying about us.</p>
+			<p class="mb-3 lead"><?php echo $testimonials_subheading; ?></p>
 		</div>
 	</div>
 	<div class="row align-items-center py-2">
 		<div class="position-relative">
-			<img src="https://cdn.livecanvas.com/media/svg/fffuel/svg-shape-11.svg" width="256" height="256" srcset="" sizes="" alt="Made by fffuel.com" class="d-none d-xl-block position-absolute top-0 start-0 translate-middle mt wp-image-2412" loading="lazy">
+
 			<!-- Slider main container -->
 			<div class="swiper mySwiper-RANDOMID position-relative">
 				<!-- Additional required wrapper -->
 				<div class="swiper-wrapper mb-5">
 					<!-- Slides -->
 					<div class="swiper-slide lc-block">
+                    <?php if($testimonials->have_posts()): ?>
+                                                <?php while($testimonials->have_posts()): $testimonials->the_post(); ?>
+                                                    <?php
+                                                        $statement = get_field("statement");
+                                                        $customer_image = get_field("customer_image");
+                                                        $customer_name = get_field("customer_name");
+                                                        $customer_job = get_field("customer_job");
+                                                    ?>
 						<div class="card p-3">
 							<div class="card-body">
 								<div class="lc-block mb-4">
 									<div editable="rich">
-										<p><em class="rfs-8 text-muted"> "These candles are fantastic! I love the clean burn and the subtle, natural scents. It's the perfect way to create a relaxing atmosphere in my home."&nbsp;</em></p>
+										<p><em class="rfs-8 text-muted"><?php echo $statement; ?> &nbsp;</em></p>
 									</div>
 								</div>
 								<div class="lc-block d-inline-flex">
 									<div class="lc-block me-3" style="min-width:72px">
-										<img class="img-fluid rounded-circle " src="https://i.pravatar.cc/96?img=5" width="72" height="72">
+										<img class="img-fluid rounded-circle " src="<?php echo $customer_image['url']; ?>" width="72" height="72">
 									</div>
 									<div class="lc-block">
 										<div editable="rich">
-											<p class="h5">Leah H. Middaugh:</p>
-											<p class="text-muted">Patient educator&nbsp;</p>
+											<p class="h5"><?php echo $customer_name; ?></p>
+											<p class="text-muted"><?php echo $customer_job; ?>&nbsp;</p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="swiper-slide lc-block">
-						<div class="card p-3">
-							<div class="card-body">
-								<div class="lc-block mb-4">
-									<div editable="rich">
-										<p><em class="rfs-8 text-muted"> As someone who cares about sustainability, Mysa Candles are my go-to. I feel great knowing they're made from eco-friendly materials, and they smell amazing too!&nbsp;</em></p>
-									</div>
-								</div>
-								<div class="lc-block d-inline-flex">
-									<div class="lc-block me-3" style="min-width:48px">
-										<img class="img-fluid rounded-circle " src="https://i.pravatar.cc/96?img=7" width="64" height="64">
-									</div>
-									<div class="lc-block">
-										<div editable="rich">
-											<p class="h5">James M. Collinsworth</p>
-											<p class="text-muted">Street Artist</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide lc-block">
-						<div class="card p-3">
-							<div class="card-body">
-								<div class="lc-block mb-4">
-									<div editable="rich">
-										<p><em class="rfs-8 text-muted"> The quality of these candles is top-notch! They last long, and I love that they don’t release harmful chemicals into the air.&nbsp;</em></p>
-									</div>
-								</div>
-								<div class="lc-block d-inline-flex">
-									<div class="lc-block me-3" style="min-width:72px">
-										<img class="img-fluid rounded-circle " src="https://i.pravatar.cc/96?img=26" width="72" height="72">
-									</div>
-									<div class="lc-block">
-										<div editable="rich">
-											<p class="h5">Amber E. Smith</p>
-											<p class="text-muted">Patient educator&nbsp;</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide lc-block">
-						<div class="card p-3">
-							<div class="card-body">
-								<div class="lc-block mb-4">
-									<div editable="rich">
-										<p><em class="rfs-8 text-muted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In pellentesque scelerisque auctor.&nbsp;</em></p>
-									</div>
-								</div>
-								<div class="lc-block d-inline-flex">
-									<div class="lc-block me-3" style="min-width:72px">
-										<img class="img-fluid rounded-circle " src="https://i.pravatar.cc/96?img=3" width="72" height="72">
-									</div>
-									<div class="lc-block">
-										<div editable="rich">
-											<p class="h5">Matthew N. Graham</p>
-											<p class="text-muted">Street Artist</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide lc-block">
-						<div class="card p-3">
-							<div class="card-body">
-								<div class="lc-block mb-4">
-									<div editable="rich">
-										<p><em class="rfs-8 text-muted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In pellentesque scelerisque auctor.</em></p>
-									</div>
-								</div>
-								<div class="lc-block d-inline-flex">
-									<div class="lc-block me-3" style="min-width:72px">
-										<img class="img-fluid rounded-circle " src="https://i.pravatar.cc/96?img=23" width="72" height="72">
-									</div>
-									<div class="lc-block">
-										<div editable="rich">
-											<p class="h5">Leslie R. Oleary</p>
-											<p class="text-muted">Fashion designer</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide lc-block">
-						<div class="card p-3">
-							<div class="card-body">
-								<div class="lc-block mb-4">
-									<div editable="rich">
-										<p><em class="rfs-8 text-muted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In pellentesque scelerisque auctor.&nbsp;</em></p>
-									</div>
-								</div>
-								<div class="lc-block d-inline-flex">
-									<div class="lc-block me-3" style="min-width:72px">
-										<img class="img-fluid rounded-circle " src="https://i.pravatar.cc/96?img=6" width="72" height="72">
-									</div>
-									<div class="lc-block">
-										<div editable="rich">
-											<p class="h5">James C. Call</p>
-											<p class="text-muted">Street Artist</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+                        <?php endwhile; ?>
+                                                <?php wp_reset_postdata(); ?>
+                                            <?php endif; ?>
 					</div>
 				</div>
 				<!-- If we need pagination -->
