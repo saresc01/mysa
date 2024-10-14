@@ -33,7 +33,7 @@
   
     
 <!-- Hero section -->
-<section class="d-flex min-vh-100" lc-helper="background" >
+<section class="d-flex min-vh-150" lc-helper="background" >
     <img src="<?php echo $index_image["url"]; ?>" alt="" class="img-fluid"> 
 
   <div class="align-self-center text-center text-light col-md-8 offset-md-2">
@@ -303,12 +303,13 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
   
 
 
+  
   <!--carousel-->
-<div class="eco-carousel  ">
-  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line; ?></h7>
-  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line; ?></h7>
-  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line; ?></h7>
-  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line; ?></h7>
+  <div class="eco-carousel  ">
+  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line;?></h7>
+  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
+  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
+  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
 </div>
 
 
