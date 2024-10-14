@@ -374,8 +374,8 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 				<div class="swiper-wrapper mb-5">
 					<!-- Slides -->
 					<div class="swiper-slide lc-block">
-                    <?php if($testimonials->have_posts()): ?>
-                                                <?php while($testimonials->have_posts()): $testimonials->the_post(); ?>
+                    <?php if($testimonial->have_posts()): ?>
+                                                <?php while($testimonial->have_posts()): $testimonial->the_post(); ?>
                                                     <?php
                                                         $statement = get_field("statement");
                                                         $customer_image = get_field("customer_image");
