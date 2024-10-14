@@ -315,21 +315,28 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 
 
 
-<!-- Testimonial Section -->
+<!--testimonial-->
+
+    
+<!-- lazily load the Swiper CSS file -->
 <link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- lazily load the Swiper JS file -->
 <script defer="defer" src="https://unpkg.com/swiper@8/swiper-bundle.min.js" onload="initializeSwiperRANDOMID();"></script>
 
+<!-- lc-needs-hard-refresh -->
 <script>
 	function initializeSwiperRANDOMID(){
+	 	// Launch SwiperJS  
 		const swiper = new Swiper(".mySwiper-RANDOMID", {
-			slidesPerView: 1,
-			grabCursor: true,
-			spaceBetween: 30,
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-			},
-			breakpoints: {
+				slidesPerView: 1,
+				grabCursor: true,
+				spaceBetween: 30,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+				breakpoints: {
 				640: {
 					slidesPerView: 1,
 					spaceBetween: 20,
@@ -345,55 +352,79 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 			},
 		});
 	}
-</script>
+ </script>
 
 <div class="container py-4">
 	<div class="lc-block text-center">
-		<h2 class="mb-3 display-6 fw-bold"><?php echo $testimonials_heading; ?></h2>
+		<div editable="rich">
+			<h2 class="mb-3 display-6 fw-bold"><?php echo $testimonials_heading; ?></h2>
+		</div>
 	</div>
 	<div class="lc-block text-center mb-5">
-		<p class="mb-3 lead"><?php echo $testimonials_subheading; ?></p>
+		<div editable="rich">
+			<p class="mb-3 lead"><?php echo $testimonials_subheading; ?></p>
+		</div>
 	</div>
 	<div class="row align-items-center py-2">
 		<div class="position-relative">
+
+			<!-- Slider main container -->
 			<div class="swiper mySwiper-RANDOMID position-relative">
+				<!-- Additional required wrapper -->
 				<div class="swiper-wrapper mb-5">
-					<?php if($testimonials->have_posts()): ?>
-						<?php while($testimonials->have_posts()): $testimonials->the_post(); ?>
+					<!-- Slides -->
+                    
+                    <!-- Custom loop for testimonials -->
+                    <?php
+                                        // Custom loop for socials
+                                        $testimonials = new WP_Query(array(
+                                            'post_type' => 'testimonial',
+                                            'posts_per_page' => -1,
+                                        ));
+                                    ?>
+					<div class="swiper-slide lc-block">
+                    <?php if($testimonials->have_posts()): ?>
+                                                <?php while($testimonials->have_posts()): $testimonials->the_post(); ?>
 							<div class="swiper-slide lc-block">
-								<?php
-									$statement = get_field("statement");
-									$customer_image = get_field("customer_image");
-									$customer_name = get_field("customer_name");
-									$customer_job = get_field("customer_job");
-								?>
-								<div class="card p-3">
-									<div class="card-body">
-										<div class="lc-block mb-4">
-											<p><em class="rfs-8 text-muted"><?php echo $statement; ?> &nbsp;</em></p>
-										</div>
-										<div class="lc-block d-inline-flex">
-											<div class="lc-block me-3" style="min-width:72px">
-												<img class="img-fluid rounded-circle" src="<?php echo $customer_image['url']; ?>" width="72" height="72">
-											</div>
-											<div class="lc-block">
-												<p class="h5"><?php echo $customer_name; ?></p>
-												<p class="text-muted"><?php echo $customer_job; ?>&nbsp;</p>
-											</div>
+                                                    <?php
+                                                        $statement = get_field("statement");
+                                                        $customer_image = get_field("customer_image");
+                                                        $customer_name = get_field("customer_name");
+                                                        $customer_job = get_field("customer_job");
+                                                    ?>
+						<div class="card p-3">
+                       
+							<div class="card-body">
+								<div class="lc-block mb-4">
+									<div editable="rich">
+										<p><em class="rfs-8 text-muted"><?php echo $statement; ?> &nbsp;</em></p>
+									</div>
+								</div>
+								<div class="lc-block d-inline-flex">
+									<div class="lc-block me-3" style="min-width:72px">
+										<img class="img-fluid rounded-circle " src="<?php echo $customer_image['url']; ?>" width="72" height="72">
+									</div>
+									<div class="lc-block">
+										<div editable="rich">
+											<p class="h5"><?php echo $customer_name; ?></p>
+											<p class="text-muted"><?php echo $customer_job; ?>&nbsp;</p>
 										</div>
 									</div>
 								</div>
-							</div> <!-- Close swiper-slide -->
-						<?php endwhile; ?>
-						<?php wp_reset_postdata(); ?>
-					<?php endif; ?>
+							</div>
+						</div>
+                        <?php endwhile; ?>
+                                                <?php wp_reset_postdata(); ?>
+                                            <?php endif; ?>
+					</div>
 				</div>
+				<!-- If we need pagination -->
 				<div class="swiper-pagination"></div>
 			</div>
 		</div>
 	</div>
 </div>
-
+ 
  
 
 
