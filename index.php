@@ -92,10 +92,11 @@
             <?php
                                 
                                         $trending_products = new WP_Query(array(
-                                            'post_type' => 'trending_product',
+                                            'post_type' => 'trending-product',
                                             'posts_per_page' => -1,
                                         ));
                                     ?>
+                                    
                                     <?php if($trending_products->have_posts()): ?>
                                                 <?php while($trending_products->have_posts()): $trending_products->the_post(); ?>
                                                     <?php
