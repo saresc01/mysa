@@ -371,17 +371,15 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 			<!-- Slider main container -->
 			<div class="swiper mySwiper-RANDOMID position-relative">
 				<!-- Additional required wrapper -->
-				<div class="swiper-wrapper mb-5">
-					<!-- Slides -->
-                    <!-- Custom loop for testimonials -->
-                    <?php
+                <?php
                                         // Custom loop for socials
                                         $testimonials = new WP_Query(array(
                                             'post_type' => 'testimonial',
                                             'posts_per_page' => -1,
                                         ));
                                     ?>
-					<div class="swiper-slide lc-block">
+				<div class="swiper-wrapper mb-5">
+					<!-- Slides -->
                     <?php if($testimonials->have_posts()): ?>
                                                 <?php while($testimonials->have_posts()): $testimonials->the_post(); ?>
                                                     <?php
@@ -390,6 +388,10 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
                                                         $customer_name = get_field("customer_name");
                                                         $customer_job = get_field("customer_job");
                                                     ?>
+                    <!-- Custom loop for testimonials -->
+                   
+					<div class="swiper-slide lc-block">
+               
 						<div class="card p-3">
 							<div class="card-body">
 								<div class="lc-block mb-4">
