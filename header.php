@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php bloginfo("name"); ?></title>
-    <?php wp_head(); ?> 
+    <?php wp_head(); ?> <!-- Essential for WordPress to function correctly -->
+</head>
 
 <body <?php body_class(); ?>>
 
@@ -27,7 +28,7 @@
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
-        </a> 
+        </a> <!-- Closed the <a> tag properly here -->
         
         <!-- Mobile Navigation Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
