@@ -228,11 +228,8 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
   
   <!--carousel-->
   <div class="eco-carousel  ">
-  <h7 class="eco-carousel-item"><?php echo $carousel_tag_line;?></h7>
-  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
-  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
-  <h7 class="eco-carousel-item">ECO SCHMEKO CANDLES</h7>
-</div>
+    <h4 class="eco-carousel-item"><?php echo $carousel_tag_line;?></h4>
+  </div>
 
 
 

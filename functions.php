@@ -35,3 +35,8 @@ function mysa_load_resources() {
 }
 add_action("wp_enqueue_scripts", "mysa_load_resources");
 
+function shop_enable_woocommerce() {
+    add_theme_support("woocommerce");
+}
+add_action("after_setup_theme", "shop_enable_woocommerce");
+

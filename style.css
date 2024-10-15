@@ -1,5 +1,5 @@
 Theme Name: mysa
-Author: Giedre and Sara
+Author: Giedre, Camille, Marin and Sara
 */
 
 .language-switcher {
@@ -309,24 +309,26 @@ button .button {
 }
 
 /* carousel not working */
-.eco-carousel-item {
+.eco-carousel {
     display: flex;
     justify-content: flex-start;
-    background-color: #fff;
+    background-color: #ADD8E6;
     overflow: hidden;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.eco-carousel{
+.eco-carousel-item {
     color: #444;
     font-size: 70px;
     text-transform: uppercase;
     white-space: nowrap;
     padding: 0 6rem;
     letter-spacing: 1px;
-    animation: move-rtl 6000ms linear infinite;
+    animation: eco-move-rtl 5s linear infinite;
 }
 
-@keyframes move-rtl {
+@keyframes eco-move-rtl {
     0% {
         transform: translateX(0);
     }
