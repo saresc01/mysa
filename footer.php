@@ -119,7 +119,7 @@
     </a>
 
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
-        <?php pll_the_languages( array( 'dropdown' => 0 ) ); ?>
+        <?php pll_the_languages( array( 'dropdown' => 0 ) ); ?> <!-- Polylang language switcher -->
     </ul>
 </div>
 
