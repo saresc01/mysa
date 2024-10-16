@@ -50,6 +50,9 @@
                     <a class="nav-link" href="<?php echo get_permalink(get_page_by_path('blog')); ?>">Blog</a>
                 </li>
             </ul>
+            
+            <ul><?php pll_the_languages() ?> </ul> 
+            
         </div>
         
         <!-- Icons and Sign Up Button -->
