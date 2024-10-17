@@ -53,16 +53,4 @@ function enqueue_custom_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
 
-function plp_register_strings() {
-    pll_register_string("Polylang Playground", "headline");
-    pll_register_string("Polylang Playground", "about_image");
-    pll_register_string("Polylang Playground", "company_description");
-    pll_register_string("Polylang Playground", "company_goal");
-    pll_register_string("Polylang Playground", "differentiation_heading");
-    pll_register_string("Polylang Playground", "differentiation_text");
-    pll_register_string("Polylang Playground", "persona_description");
-    pll_register_string("Polylang Playground", "mission_headline");
-    pll_register_string("Polylang Playground", "goal_headline");
-    pll_register_string("Polylang Playground", "socials_cta");
-}
-add_action("init", "plp_register_strings");
+
