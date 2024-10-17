@@ -51,6 +51,7 @@
                 </li>
             </ul>
             
+            <ul><?php pll_the_languages() ?> </ul> 
 
         </div>
         
