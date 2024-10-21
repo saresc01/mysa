@@ -95,6 +95,13 @@
 
                                 <?php if ($non_featured_blogs->have_posts()): ?>
                                     <?php while ($non_featured_blogs->have_posts()): $non_featured_blogs->the_post(); ?>
+                                        
+                                        <?php
+                                        $post_img = get_field("post_img"); 
+                                        $post_heading = get_field("post_heading");
+                                        $post_text = get_field("post_text");
+                                        $date_posted = get_field("date_posted");
+                                        ?>
                                         <div class="card mb-4">
                                             <a href="#!">
                                                 <img class="card-img-top" src="<?php echo $post_img['url']; ?>" alt="Non-Featured Blog Image" />
