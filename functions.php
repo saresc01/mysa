@@ -35,8 +35,28 @@ function mysa_load_resources() {
 }
 add_action("wp_enqueue_scripts", "mysa_load_resources");
 
+<<<<<<< HEAD
 function shop_enable_woocommerce() {
     add_theme_support("woocommerce");
 }
 add_action("after_setup_theme", "shop_enable_woocommerce");
+=======
+function enqueue_custom_scripts() {
+    // Bootstrap CSS
+    wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css', array(), '5.3.0' );
+    
+    // Optionally, MDB CSS if you're using it
+    // wp_enqueue_style( 'mdb-css', 'https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css', array(), '6.0.0' );
+
+    // Your Theme's CSS
+    wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
+
+    // Bootstrap JS (includes Popper.js)
+    wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', array('jquery'), '5.3.0', true );
+
+    // Optionally, MDB JS if you're using it
+    // wp_enqueue_script( 'mdb-js', 'https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js', array('bootstrap-js'), '6.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
+>>>>>>> 08c250420dd329beee34a01a9e49e83fafb9d3f7
 

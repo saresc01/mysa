@@ -112,42 +112,28 @@
         </div>
         <!--- payment --->
 
-        <!--- language selector --->
-        <div class="dropdown dropup">
-          <a class="dropdown-toggle text-black" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false"> <i class="flag-united-kingdom flag m-0 me-1"></i>English </a>
+        <!-- Footer Language Selector -->
+<div class="dropdown">
+    <a class="dropdown-toggle text-black" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="flag-united-kingdom flag m-0 me-1"></i>English
+    </a>
 
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
-            <li>
-              <a class="dropdown-item text-black" href="#"><i class="flag-united-kingdom flag"></i>English <i class="fa fa-check text-success ms-2"></i></a>
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item text-black" href="#"><i class="flag-poland flag"></i>Polski</a>
-            </li>
-            <li>
-              <a class="dropdown-item text-black" href="#"><i class="flag-china flag"></i>中文</a>
-            </li>
-            <li>
-              <a class="dropdown-item text-black" href="#"><i class="flag-japan flag"></i>日本語</a>
-            </li>
-            <li>
-              <a class="dropdown-item text-black" href="#"><i class="flag-germany flag"></i>Deutsch</a>
-            </li>
-            <li>
-              <a class="dropdown-item text-black" href="#"><i class="flag-france flag"></i>Français</a>
-            </li>
-            <li>
-              <a class="dropdown-item text-black" href="#"><i class="flag-spain flag"></i>Español</a>
-            </li>
-            <li>
-              <a class="dropdown-item text-black" href="#"><i class="flag-russia flag"></i>Русский</a>
-            </li>
-            <li>
-              <a class="dropdown-item text-black" href="#"><i class="flag-portugal flag"></i>Português</a>
-            </li>
-          </ul>
-        </div>
-        <!--- language selector --->
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+        <?php 
+        // Display languages without additional <ul> nesting
+        pll_the_languages(array(
+            'dropdown' => 1, // Let Polylang handle the dropdown structure
+            'show_flags' => 1,
+            'show_names' => 1,
+            'hide_if_empty' => 0,
+            'echo' => 1,
+        )); 
+        ?>
+    </ul>
+</div>
+
+
+ <!--- language selector --->
       </div>
     </div>
   </div>
