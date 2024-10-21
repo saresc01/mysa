@@ -235,13 +235,7 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 
 <!--testimonial-->
 
-    
-<!-- lazily load the Swiper CSS file -->
-<link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-<!-- lazily load the Swiper JS file -->
-<script defer="defer" src="https://unpkg.com/swiper@8/swiper-bundle.min.js" onload="initializeSwiperRANDOMID();"></script>
-
+  
 <!-- lc-needs-hard-refresh -->
 <script>
 	function initializeSwiperRANDOMID(){
@@ -271,6 +265,12 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
 		});
 	}
  </script>
+
+  <!-- lazily load the Swiper CSS file -->
+  <link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- lazily load the Swiper JS file -->
+  <script defer="defer" src="https://unpkg.com/swiper@8/swiper-bundle.min.js" onload="initializeSwiperRANDOMID();"></script>
 
 <div class="container py-4">
 	<div class="lc-block text-center">
