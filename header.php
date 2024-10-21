@@ -51,10 +51,11 @@
                 </li>
             </ul>
             
+            <ul><?php pll_the_languages() ?></ul>
 
         </div>
         
-                        <ul><?php pll_the_languages() ?></ul>
+                     
 
         <!-- Icons and Sign Up Button -->
         <div class="d-flex align-items-center">
