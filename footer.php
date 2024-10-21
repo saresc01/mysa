@@ -112,28 +112,15 @@
         </div>
         <!--- payment --->
 
-        <!-- Footer Language Selector -->
-<div class="dropdown">
-    <a class="dropdown-toggle text-black" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="flag-united-kingdom flag m-0 me-1"></i>English
-    </a>
+        <!--- language selector --->
+        <div class="dropdown dropup">
+          <a class="dropdown-toggle text-black" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false"> <i class="flag-united-kingdom flag m-0 me-1"></i>English </a>
 
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-        <?php 
-        // Display languages without additional <ul> nesting
-        pll_the_languages(array(
-            'dropdown' => 1, // Let Polylang handle the dropdown structure
-            'show_flags' => 1,
-            'show_names' => 1,
-            'hide_if_empty' => 0,
-            'echo' => 1,
-        )); 
-        ?>
-    </ul>
-</div>
-
-
- <!--- language selector --->
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
+            
+          </ul>
+        </div>
+        <!--- language selector --->
       </div>
     </div>
   </div>
