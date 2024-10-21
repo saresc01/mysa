@@ -300,41 +300,40 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
                                             'posts_per_page' => -1,
                                         ));
                                     ?>
-					<div class="swiper-slide lc-block">
-                    <?php if($testimonials->have_posts()): ?>
-                                                <?php while($testimonials->have_posts()): $testimonials->the_post(); ?>
-							<div class="swiper-slide lc-block">
-                                                    <?php
-                                                        $statement = get_field("statement");
-                                                        $customer_image = get_field("customer_image");
-                                                        $customer_name = get_field("customer_name");
-                                                        $customer_job = get_field("customer_job");
-                                                    ?>
-						<div class="card p-3">
+				
+            <?php if($testimonials->have_posts()): ?>
+              <?php while($testimonials->have_posts()): $testimonials->the_post(); ?>
+							  <div class="swiper-slide lc-block">
+                  <?php
+                      $statement = get_field("statement");
+                      $customer_image = get_field("customer_image");
+                      $customer_name = get_field("customer_name");
+                      $customer_job = get_field("customer_job");
+                  ?>
+                  <div class="card p-3">
                        
-							<div class="card-body">
-								<div class="lc-block mb-4">
-									<div editable="rich">
-										<p><em class="rfs-8 text-muted"><?php echo $statement; ?> &nbsp;</em></p>
-									</div>
-								</div>
-								<div class="lc-block d-inline-flex">
-									<div class="lc-block me-3" style="min-width:72px">
-										<img class="img-fluid rounded-circle " src="<?php echo $customer_image['url']; ?>" width="72" height="72">
-									</div>
-									<div class="lc-block">
-										<div editable="rich">
-											<p class="h5"><?php echo $customer_name; ?></p>
-											<p class="text-muted"><?php echo $customer_job; ?>&nbsp;</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-                        <?php endwhile; ?>
-                                                <?php wp_reset_postdata(); ?>
-                                            <?php endif; ?>
-					</div>
+                  <div class="card-body">
+                    <div class="lc-block mb-4">
+                      <div editable="rich">
+                        <p><em class="rfs-8 text-muted"><?php echo $statement; ?> &nbsp;</em></p>
+                      </div>
+                    </div>
+                    <div class="lc-block d-inline-flex">
+                      <div class="lc-block me-3" style="min-width:72px">
+                        <img class="img-fluid rounded-circle " src="<?php echo $customer_image['url']; ?>" width="72" height="72">
+                      </div>
+                      <div class="lc-block">
+                        <div editable="rich">
+                          <p class="h5"><?php echo $customer_name; ?></p>
+                          <p class="text-muted"><?php echo $customer_job; ?>&nbsp;</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <?php endwhile; ?>
+              <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
 				</div>
 				<!-- If we need pagination -->
 				<div class="swiper-pagination"></div>
