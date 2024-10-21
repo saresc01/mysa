@@ -33,9 +33,7 @@
   
     
 <!-- Hero section -->
-<section class="d-flex min-vh-100" lc-helper="background" >
-    <img src="<?php echo $index_image["url"]; ?>" alt="" class="img-fluid"> 
-
+<section class="d-flex min-vh-100" lc-helper="background" style="background-image: url(<?php echo $index_image["url"];  ?>)">
   <div class="align-self-center text-center text-light col-md-8 offset-md-2">
       <div class="lc-block mb-4">
           <div editable="rich">
