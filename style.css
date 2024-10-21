@@ -1,8 +1,33 @@
-/* Theme Name: mysa
-Author: Giedre, Sara, Camille and Marin
+/*Theme Name: mysa
+Author: Giedre, Marin, Camille and Sara
 */
 
+.language-switcher {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
 
+.language-switcher ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.language-switcher li {
+    margin: 0 10px;
+}
+
+.language-switcher a {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+}
+
+.language-switcher a:hover {
+    background-color: #ddd;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
@@ -284,24 +309,26 @@ button .button {
 }
 
 /* carousel not working */
-.eco-carousel-item {
+.eco-carousel {
     display: flex;
     justify-content: flex-start;
-    background-color: #fff;
+    background-color: #ADD8E6;
     overflow: hidden;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.eco-carousel{
+.eco-carousel-item {
     color: #444;
     font-size: 70px;
     text-transform: uppercase;
     white-space: nowrap;
     padding: 0 6rem;
     letter-spacing: 1px;
-    animation: move-rtl 6000ms linear infinite;
+    animation: eco-move-rtl 5s linear infinite;
 }
 
-@keyframes move-rtl {
+@keyframes eco-move-rtl {
     0% {
         transform: translateX(0);
     }
