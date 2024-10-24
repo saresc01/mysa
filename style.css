@@ -60,7 +60,7 @@ ul li a:hover::after {
 .wpcf7 {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -125,7 +125,7 @@ ul li a:hover::after {
     display: block;
     width: 100%;
     max-width: 160px;
-    margin: 20px auto;
+    margin: 10px auto 0 auto;
   }
   
   /* Style the form labels */
