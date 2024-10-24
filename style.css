@@ -58,9 +58,9 @@ ul li a:hover::after {
 
 /* Center the form container */
 .wpcf7 {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -70,9 +70,9 @@ ul li a:hover::after {
   .wpcf7 p {
     font-size: 25px;
     color: #000;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.4;
   }
   
   /* Style input fields */
@@ -80,8 +80,8 @@ ul li a:hover::after {
   .wpcf7 input[type="email"],
   .wpcf7 textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
@@ -99,7 +99,7 @@ ul li a:hover::after {
   
   /* Textarea styling */
   .wpcf7 textarea {
-    min-height: 120px;
+    min-height: 100px;
     resize: vertical;
   }
   
@@ -108,7 +108,7 @@ ul li a:hover::after {
     width: 100%;
     background-color: #0073e6;
     color: white;
-    padding: 14px 20px;
+    padding: 12px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -124,7 +124,7 @@ ul li a:hover::after {
   .wpcf7 .wpcf7-submit {
     display: block;
     width: 100%;
-    max-width: 180px;
+    max-width: 160px;
     margin: 20px auto;
   }
   
@@ -133,7 +133,7 @@ ul li a:hover::after {
     font-size: 20px;
     color: #000;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     display: block;
     text-align: left;
   }
