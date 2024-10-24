@@ -113,9 +113,6 @@
                                                 <a class="btn btn-primary" href="#!">Read more →</a>
                                             </div>
                                         </div>
-
-                                        <?php echo do_shortcode('[contact-form-7 id="15344e9" title="Contact form 1"]'); ?>
-
                                     <?php endwhile; ?>
                                     <?php wp_reset_postdata(); ?>
                                 <?php endif; ?>

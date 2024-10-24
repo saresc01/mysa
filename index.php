@@ -6,7 +6,6 @@
 
 
         
-        <?php echo do_shortcode('[contact-form-7 id="15344e9" title="Contact form 1"]'); ?>
 
         <?php
             $index_image = get_field("index_image");
@@ -220,7 +219,8 @@ border: 1px solid rgba(209, 213, 219, 0.3);">
  <br>
  <br>
  
-  
+ <?php echo do_shortcode('[contact-form-7 id="15344e9" title="Contact form 1"]'); ?>
+
 
 
   
