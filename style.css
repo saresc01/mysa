@@ -526,14 +526,14 @@ img {
 .woocommerce ul.products li.product .price, 
 .woocommerce-page ul.products li.product .price {
     font-size: 14px; /* Price font size */
-    color: #0071a1; /* Price color */
+    color: #0e6dfd; /* Price color */
     font-weight: bold; /* Bold price */
 }
 
 /* Style the "Add to cart" button */
 .woocommerce ul.products li.product .button, 
 .woocommerce-page ul.products li.product .button {
-    background-color: #0071a1; /* Button background color */
+    background-color: #0e6dfd; /* Button background color */
     color: #fff; /* Button text color */
     padding: 8px 12px; /* Button padding */
     border-radius: 5px; /* Button rounded corners */
@@ -543,5 +543,5 @@ img {
 
 .woocommerce ul.products li.product .button:hover, 
 .woocommerce-page ul.products li.product .button:hover {
-    background-color: #005f8d; /* Darker color on hover */
+    background-color: #0071a1; /* Darker color on hover */
 }
